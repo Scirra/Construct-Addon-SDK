@@ -9,6 +9,10 @@ Click the green **Code** button and choose **Download ZIP** to get a copy of the
 
 Refer to the [Addon SDK manual](https://www.construct.net/make-games/manuals/addon-sdk) to get started!
 
+## Support
+
+Post to the [Plugin SDK forum](https://www.construct.net/en/forum/construct-3/plugin-sdk-10) for general questions and help. If you think you've run in to a problem with Construct itself, please [file an issue](https://github.com/Scirra/Construct-bugs).
+
 ## Contributions
 
 We are hosting the SDK files on GitHub, but we don't intend to accept contributions to this code. Feel free to start a new repository if you want to provide additional SDK samples or an altered version of the SDK.
