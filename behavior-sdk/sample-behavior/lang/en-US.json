@@ -1,0 +1,41 @@
+﻿{
+	"languageTag": "en-US",
+	"fileDescription": "Strings for MyCustomBehavior.",
+	"text": {
+		"behaviors": {
+			"mycompany_mybehavior": {
+				"name": "MyCustomBehavior",
+				"description": "An example third-party behavior.",
+				"help-url": "https://www.construct.net",
+				"properties": {
+					"test-property": {
+						"name": "Test property",
+						"desc": "A test number property."
+					}
+				},
+				"aceCategories": {
+				},
+				"conditions": {
+					"is-moving": {
+						"list-name": "Is moving",
+						"display-text": "{my} is moving",
+						"description": "An example condition for the behavior."
+					}
+				},
+				"actions": {
+					"stop": {
+						"list-name": "Stop",
+						"display-text": "Stop {my}",
+						"description": "An example action for the behavior."
+					}
+				},
+				"expressions": {
+					"leet": {
+						"description": "Returns the number 1337.",
+						"translated-name": "MyExpression"
+					}
+				}
+			}
+		}
+	}
+}

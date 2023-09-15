@@ -1,0 +1,24 @@
+﻿{
+	"": {
+		"conditions": [
+			{
+				"id": "is-moving",
+				"scriptName": "IsMoving"
+			}
+		],
+		"actions": [
+			{
+				"id": "stop",
+				"scriptName": "Stop"
+			}
+		],
+		"expressions": [
+			{
+				"id": "leet",
+				"expressionName": "MyExpression",
+				"scriptName": "MyExpression",
+				"returnType": "number"
+			}
+		]
+	}
+}

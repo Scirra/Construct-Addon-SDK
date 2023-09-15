@@ -1,0 +1,13 @@
+﻿{
+	"languageTag": "en-US",
+	"fileDescription": "Strings for GreenBars theme.",
+	"text": {
+		"themes": {
+			"greenbars": {
+				"name": "Green bars theme",
+				"description": "Makes the bars go green.",
+				"help-url": "https://www.scirra.com"
+			}
+		}
+	}
+}

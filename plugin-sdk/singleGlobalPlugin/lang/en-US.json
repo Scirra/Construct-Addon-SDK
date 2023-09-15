@@ -1,0 +1,54 @@
+﻿{
+	"languageTag": "en-US",
+	"fileDescription": "Strings for MyCustomPlugin.",
+	"text": {
+		"plugins": {
+			"mycompany_singleglobal": {
+				"name": "MyCustomPlugin",
+				"description": "An example third-party plugin.",
+				"help-url": "https://www.construct.net",
+				"properties": {
+					"test-property": {
+						"name": "Test property",
+						"desc": "A test number property. Displayed by 'Alert' action."
+					}
+				},
+				"aceCategories": {
+					"custom": "Custom"
+				},
+				"conditions": {
+					"is-large-number": {
+						"list-name": "Is large number",
+						"display-text": "[i]{0}[/i] is a large number",
+						"description": "Test if a number is greater than 100.",
+						"params": {
+							"number": {
+								"name": "Number",
+								"desc": "Number to test if greater than 100."
+							}
+						}
+					}
+				},
+				"actions": {
+					"log-to-console": {
+						"list-name": "Log to console",
+						"display-text": "Log to console",
+						"description": "Log a test message to the console."
+					}
+				},
+				"expressions": {
+					"double": {
+						"description": "Double a number.",
+						"translated-name": "Double",
+						"params": {
+							"number": {
+								"name": "Number",
+								"desc": "The number to double."
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

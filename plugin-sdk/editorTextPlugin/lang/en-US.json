@@ -1,0 +1,58 @@
+﻿{
+	"languageTag": "en-US",
+	"fileDescription": "Strings for MyTextPlugin.",
+	"text": {
+		"plugins": {
+			"mycompany_textplugin": {
+				"name": "MyText",
+				"description": "Testing a custom text drawing third-party plugin.",
+				"help-url": "https://www.construct.net",
+				"properties": {
+					"font": {
+						"name": "Font",
+						"desc": "The font to use."
+					},
+					"text": {
+						"name": "Text",
+						"desc": "The text to display."
+					}
+				},
+				"aceCategories": {
+					"custom": "Custom"
+				},
+				"conditions": {
+					"is-large-number": {
+						"list-name": "Is large number",
+						"display-text": "[i]{0}[/i] is a large number",
+						"description": "Test if a number is greater than 100.",
+						"params": {
+							"number": {
+								"name": "Number",
+								"desc": "Number to test if greater than 100."
+							}
+						}
+					}
+				},
+				"actions": {
+					"do-alert": {
+						"list-name": "Do alert",
+						"display-text": "Do alert",
+						"description": "Do a dummy alert."
+					}
+				},
+				"expressions": {
+					"double": {
+						"description": "Double a number.",
+						"translated-name": "Double",
+						"params": {
+							"number": {
+								"name": "Number",
+								"desc": "The number to double."
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

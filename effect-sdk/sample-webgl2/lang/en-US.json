@@ -1,0 +1,12 @@
+﻿{
+	"languageTag": "en-US",
+	"fileDescription": "Strings for the sample WebGL2 effect.",
+	"text": {
+		"effects": {
+			"mycompany_webgl2effect": {
+				"name": "WebGL 2 effect",
+				"description": "Demonstrates WebGL 2 shader variants by displaying red with WebGL 1 and green with WebGL 2 (and blue with WebGPU)."
+			}
+		}
+	}
+}

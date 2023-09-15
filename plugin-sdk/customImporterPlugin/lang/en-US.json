@@ -1,0 +1,54 @@
+﻿{
+	"languageTag": "en-US",
+	"fileDescription": "Strings for MyCustomImporterPlugin.",
+	"text": {
+		"plugins": {
+			"mycompany_customimporter": {
+				"name": "CustomImportPlugin",
+				"description": "An example third-party plugin demonstrating the Custom Importer API.",
+				"help-url": "https://www.construct.net",
+				"properties": {
+					"test-property": {
+						"name": "Test property",
+						"desc": "A test number property. Displayed by 'Alert' action."
+					}
+				},
+				"aceCategories": {
+					"custom": "Custom"
+				},
+				"conditions": {
+					"is-large-number": {
+						"list-name": "Is large number",
+						"display-text": "[i]{0}[/i] is a large number",
+						"description": "Test if a number is greater than 100.",
+						"params": {
+							"number": {
+								"name": "Number",
+								"desc": "Number to test if greater than 100."
+							}
+						}
+					}
+				},
+				"actions": {
+					"do-alert": {
+						"list-name": "Do alert",
+						"display-text": "Do alert",
+						"description": "Do a dummy alert."
+					}
+				},
+				"expressions": {
+					"double": {
+						"description": "Double a number.",
+						"translated-name": "Double",
+						"params": {
+							"number": {
+								"name": "Number",
+								"desc": "The number to double."
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,64 @@
+﻿{
+	"languageTag": "en-US",
+	"fileDescription": "Strings for MyDrawingPlugin.",
+	"text": {
+		"plugins": {
+			"mycompany_drawingplugin": {
+				"name": "MyDrawing",
+				"description": "Testing a custom drawing third-party plugin.",
+				"help-url": "https://www.construct.net",
+				"properties": {
+					"edit-image": {
+						"name": "Image",
+						"desc": "Click to edit the object's image.",
+						"link-text": "Edit"
+					},
+					"make-original-size": {
+						"name": "Size",
+						"desc": "Click to set the object to the same size as its image.",
+						"link-text": "Make 1:1"
+					},
+					"test-property": {
+						"name": "Test property",
+						"desc": "A test number property. Displayed by 'Alert' action."
+					}
+				},
+				"aceCategories": {
+					"custom": "Custom"
+				},
+				"conditions": {
+					"is-large-number": {
+						"list-name": "Is large number",
+						"display-text": "[i]{0}[/i] is a large number",
+						"description": "Test if a number is greater than 100.",
+						"params": {
+							"number": {
+								"name": "Number",
+								"desc": "Number to test if greater than 100."
+							}
+						}
+					}
+				},
+				"actions": {
+					"do-alert": {
+						"list-name": "Do alert",
+						"display-text": "Do alert",
+						"description": "Do a dummy alert."
+					}
+				},
+				"expressions": {
+					"double": {
+						"description": "Double a number.",
+						"translated-name": "Double",
+						"params": {
+							"number": {
+								"name": "Number",
+								"desc": "The number to double."
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

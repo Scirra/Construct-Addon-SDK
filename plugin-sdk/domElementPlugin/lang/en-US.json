@@ -1,0 +1,48 @@
+﻿{
+	"languageTag": "en-US",
+	"fileDescription": "Strings for MyCompany_DOMPlugin.",
+	"text": {
+		"plugins": {
+			"mycompany_domplugin": {
+				"name": "MyDOM",
+				"description": "Testing a custom DOM element third-party plugin.",
+				"help-url": "https://www.construct.net",
+				"properties": {
+					"button-text": {
+						"name": "Button text",
+						"desc": "The text to display on the button."
+					}
+				},
+				"aceCategories": {
+					"button": "Button"
+				},
+				"conditions": {
+					"on-click": {
+						"list-name": "On click",
+						"display-text": "On click",
+						"description": "Triggered when the button is clicked."
+					}
+				},
+				"actions": {
+					"set-text": {
+						"list-name": "Set text",
+						"display-text": "Set button text to [i]{0}[/i]",
+						"description": "Set the button text.",
+						"params": {
+							"text": {
+								"name": "Text",
+								"desc": "The new button text."
+							}
+						}
+					}
+				},
+				"expressions": {
+					"text": {
+						"description": "The button text.",
+						"translated-name": "Text"
+					}
+				}
+			}
+		}
+	}
+}

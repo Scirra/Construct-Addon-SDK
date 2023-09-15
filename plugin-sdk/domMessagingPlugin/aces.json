@@ -1,0 +1,26 @@
+﻿{
+	"custom": {
+		"actions": [
+			{
+				"id": "set-document-title",
+				"scriptName": "SetDocumentTitle",
+				"highlight": true,
+				"params": [
+					{
+						"id": "title",
+						"type": "string"
+					}
+				]
+			}
+		],
+		"expressions": [
+			{
+				"id": "get-document-title",
+				"expressionName": "DocumentTitle",
+				"scriptName": "DocumentTitle",
+				"highlight": true,
+				"returnType": "string"
+			}
+		]
+	}
+}
