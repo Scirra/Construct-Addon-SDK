@@ -29,6 +29,7 @@ The SDK includes the following samples:
 - **drawingPlugin**: a plugin that has an editable image and demonstrates basic code to draw it in the Layout View.
 - **editorTextPlugin**: a plugin that demonstrates rendering text in both the editor and runtime.
 - **singleGlobalPlugin**: demonstrates a basic "single-global" plugin, where it can only be added once and provides its features globally, like the Audio plugin. This is usually the best starting point for a plugin that aims to integrate a third-party service.
+- **wrapperExtensionPlugin**: demonstrates a plugin that interacts with a *wrapper extension* - a DLL written in C++ that can provide enhanced platform integration. For more details see the [Wrapper extension guide in the Addon SDK manual](https://www.construct.net/en/make-games/manuals/addon-sdk/guide/wrapper-extensions).
 
 ## Behaviors
 
