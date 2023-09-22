@@ -1,3 +1,9 @@
 .vs
 *.c3addon
 *.vcxproj.user
+/plugin-sdk/wrapperExtensionPlugin/extension/x64/
+/plugin-sdk/wrapperExtensionPlugin/extension/ARM64/
+/plugin-sdk/wrapperExtensionPlugin/extension/Win32/
+/plugin-sdk/wrapperExtensionPlugin/construct-plugin/*.exp
+/plugin-sdk/wrapperExtensionPlugin/construct-plugin/*.lib
+/plugin-sdk/wrapperExtensionPlugin/construct-plugin/*.pdb
