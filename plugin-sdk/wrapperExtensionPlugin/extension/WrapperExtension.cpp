@@ -44,12 +44,20 @@ WrapperExtension::WrapperExtension(IApplication* iApplication_)
 	: iApplication(iApplication_),
 	  hWndMain(NULL)
 {
+	// Tell the host application the SDK version used. Don't change this.
+	iApplication->SetSdkVersion(WRAPPER_EXT_SDK_VERSION);
+
 	// Register a component ID for JavaScript messaging with this extension.
 	// The Construct plugin must specify the same component ID via SetWrapperExtensionComponentId().
 	// Extensions should only register a single component ID, and it must be different to all other component
 	// IDs that are ever used, so make sure it's unique. It should also only be registered here
 	// in the WrapperExtension constructor.
 	iApplication->RegisterComponentId("my-extension");
+}
+
+void WrapperExtension::Init()
+{
+	// Called during startup after all other extensions have been loaded.
 }
 
 void WrapperExtension::Release()

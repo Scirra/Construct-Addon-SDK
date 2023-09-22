@@ -4,6 +4,9 @@
 
 #include "IExtension.h"
 
+// Current SDK version.
+#define WRAPPER_EXT_SDK_VERSION 2
+
 // Interface representing the host application, typically accessed via 'iApplication'.
 class DECLSPEC_NOVTABLE IApplication {
 public:
@@ -26,4 +29,14 @@ public:
 
 	// Get the full path to the current application's app data folder.
 	virtual LPCSTR GetCurrentAppDataFolder() = 0;
+	
+	// Set the current SDK version. Must only be passed with WRAPPER_EXT_SDK_VERSION.
+	virtual void SetSdkVersion(int version) = 0;
+
+	// Shared data API: extensions can set, get, and remove pointers shared with other
+	// extensions. Each pointer has a string ID which is unique for each kind of pointer.
+	// Note these IDs are unrelated to the component ID - they are global to the whole app.
+	virtual void SetSharedPtr(LPCSTR id, void* ptr) = 0;
+	virtual void* GetSharedPtr(LPCSTR id) = 0;
+	virtual void RemoveSharedPtr(LPCSTR id) = 0;
 };

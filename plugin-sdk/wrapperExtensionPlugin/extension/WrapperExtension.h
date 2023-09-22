@@ -8,6 +8,7 @@ public:
 	WrapperExtension(IApplication* iApplication_);
 
 	// IExtension overrides
+	void Init();
 	void Release();
 	void OnWebMessage(LPCSTR messageId, size_t paramCount, const ExtensionParameterPOD* paramArr, double asyncId);
 	void OnMainWindowCreated(HWND hWnd_);
