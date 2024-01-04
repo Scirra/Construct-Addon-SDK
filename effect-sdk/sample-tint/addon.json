@@ -1,4 +1,6 @@
 ﻿{
+	"$schema": "../effect.addon.schema.json",
+	
 	"is-c3-addon": true,
 	"type": "effect",
 	"name": "My custom effect",

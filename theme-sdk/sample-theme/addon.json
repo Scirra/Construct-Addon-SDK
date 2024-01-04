@@ -1,4 +1,6 @@
 ﻿{
+	"$schema": "../theme.addon.schema.json",
+	
 	"is-c3-addon": true,
 	"type": "theme",
 	"name": "Green bars theme",

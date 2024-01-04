@@ -1,4 +1,6 @@
 ﻿{
+	"$schema": "../behavior.addon.schema.json",
+
 	"is-c3-addon": true,
 	"type": "behavior",
 	"name": "My custom behavior",

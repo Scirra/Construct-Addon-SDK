@@ -1,4 +1,6 @@
 ﻿{
+	"$schema": "../plugin.addon.schema.json",
+	
 	"is-c3-addon": true,
 	"type": "plugin",
 	"name": "My text plugin",
