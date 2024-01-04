@@ -1,4 +1,6 @@
 ﻿{
+	"$schema": "../../theme.lang.schema.json",
+	
 	"languageTag": "en-US",
 	"fileDescription": "Strings for GreenBars theme.",
 	"text": {

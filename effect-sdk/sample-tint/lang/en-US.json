@@ -1,4 +1,6 @@
 ﻿{
+	"$schema": "../../effect.lang.schema.json",
+
 	"languageTag": "en-US",
 	"fileDescription": "Strings for the 'MyCustomEffect' effect.",
 	"text": {

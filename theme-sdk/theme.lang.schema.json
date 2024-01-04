@@ -1,0 +1,50 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://construct.net/sdk/schema/theme.lang.schema.json",
+    "title": "Theme language file JSON",
+    "description": "The language file with strings for a theme.",
+    "type": "object",
+    "properties": {
+        "languageTag": {
+            "description": "An IETF language tag defining the translation language, e.g. \"en-US\".",
+            "type": "string"
+        },
+        "fileDescription": {
+            "description": "Optional description for this file (as a comment only).",
+            "type": "string"
+        },
+        "text": {
+            "type": "object",
+            "properties": {
+                "themes": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "description": "The display name of the theme.",
+                                "type": "string"
+                            },
+                            "description": {
+                                "description": "The description of the theme.",
+                                "type": "string"
+                            },
+                            "help-url": {
+                                "description": "A URL for documentation or support.",
+                                "type": "string",
+                                "format": "uri"
+                            }
+                        },
+                        "required": ["name", "description", "help-url"]
+                    },
+                    "minProperties": 1,
+                    "maxProperties": 1
+                }
+            },
+            "required": ["themes"],
+            "additionalProperties": false
+        }
+    },
+    "required": ["languageTag", "text"]
+}
+    

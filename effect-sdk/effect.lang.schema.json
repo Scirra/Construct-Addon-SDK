@@ -1,0 +1,65 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://construct.net/sdk/schema/effect.lang.schema.json",
+    "title": "Effect language file JSON",
+    "description": "The language file with strings for an effect.",
+    "type": "object",
+    "properties": {
+        "languageTag": {
+            "description": "An IETF language tag defining the translation language, e.g. \"en-US\".",
+            "type": "string"
+        },
+        "fileDescription": {
+            "description": "Optional description for this file (as a comment only).",
+            "type": "string"
+        },
+        "text": {
+            "type": "object",
+            "properties": {
+                "effects": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "description": "The display name of the effect.",
+                                "type": "string"
+                            },
+                            "description": {
+                                "description": "The description of the effect.",
+                                "type": "string"
+                            },
+                            "parameters": {
+                                "description": "Language strings for effect parameters.",
+                                "type": "object",
+                                "additionalProperties": {
+                                    "description": "Language strings for an effect parameter by its ID.",
+                                    "type": "object",
+                                    "properties": {
+                                        "name": {
+                                            "description": "Name of this effect parameter.",
+                                            "type": "string"
+                                        },
+                                        "desc": {
+                                            "description": "Description of this effect parameter.",
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": ["name", "desc"],
+                                    "additionalProperties": false
+                                }
+                            }
+                        },
+                        "required": ["name", "description"]
+                    },
+                    "minProperties": 1,
+                    "maxProperties": 1
+                }
+            },
+            "required": ["effects"],
+            "additionalProperties": false
+        }
+    },
+    "required": ["languageTag", "text"]
+}
+    

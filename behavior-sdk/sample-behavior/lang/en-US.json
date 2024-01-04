@@ -1,4 +1,6 @@
 ﻿{
+	"$schema": "../../behavior.lang.schema.json",
+
 	"languageTag": "en-US",
 	"fileDescription": "Strings for MyCustomBehavior.",
 	"text": {
