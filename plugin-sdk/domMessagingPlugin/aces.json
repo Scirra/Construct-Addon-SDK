@@ -1,4 +1,6 @@
 ﻿{
+	"$schema": "../aces.schema.json",
+	
 	"custom": {
 		"actions": [
 			{
@@ -17,7 +19,6 @@
 			{
 				"id": "get-document-title",
 				"expressionName": "DocumentTitle",
-				"scriptName": "DocumentTitle",
 				"highlight": true,
 				"returnType": "string"
 			}

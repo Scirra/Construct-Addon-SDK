@@ -1,4 +1,6 @@
 ﻿{
+	"$schema": "../aces.schema.json",
+	
 	"custom": {
 		"conditions": [
 			{

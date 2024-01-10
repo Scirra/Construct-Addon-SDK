@@ -1,4 +1,6 @@
 ﻿{
+	"$schema": "../aces.schema.json",
+	
 	"custom": {
 		"conditions": [
 			{
@@ -24,7 +26,6 @@
 			{
 				"id": "double",
 				"expressionName": "Double",
-				"scriptName": "Double",
 				"highlight": true,
 				"returnType": "number",
 				"params": [
