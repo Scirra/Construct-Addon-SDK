@@ -9,6 +9,10 @@ Click the green **Code** button and choose **Download ZIP** to get a copy of the
 
 Refer to the [Addon SDK manual](https://www.construct.net/make-games/manuals/addon-sdk) to get started!
 
+## JSON Schemas
+
+The SDK includes [JSON schemas](https://json-schema.org/) for addon metadata (*addon.json*), action/condition/expression definitions (*aces.json*) and language (*en-US.json*) files. With a compatible editor like [VS Code](https://code.visualstudio.com/), this allows validation and autocomplete of these kinds of JSON files, which can make it much easier to write them correctly. If you change the folder structure of the SDK, make sure the special `"$schema"` key at the start of the JSON file points to the relevant schema file, e.g. `"../aces.schema.json"`.
+
 ## Support
 
 Post to the [Plugin SDK forum](https://www.construct.net/en/forum/construct-3/plugin-sdk-10) for general questions and help. If you think you've run in to a problem with Construct itself, please [file an issue](https://github.com/Scirra/Construct-bugs).
