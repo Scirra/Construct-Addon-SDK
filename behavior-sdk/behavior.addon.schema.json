@@ -9,6 +9,10 @@
             "description": "This is used by Construct to identify valid addons.",
             "const": true
         },
+        "sdk-version": {
+            "description": "The version of the Addon SDK used for this addon.",
+            "type": "number"
+        },
         "type": {
             "description": "Indicates the addon type. For the behavior schema, this must be \"behavior\".",
             "const": "behavior"

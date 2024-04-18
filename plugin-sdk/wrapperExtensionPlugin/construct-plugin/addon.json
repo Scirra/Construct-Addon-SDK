@@ -2,6 +2,7 @@
 	"$schema": "../../plugin.addon.schema.json",
 
 	"is-c3-addon": true,
+	"sdk-version": 1,
 	"type": "plugin",
 	"name": "Wrapper extension",
 	"id": "MyCompany_WrapperExt",
