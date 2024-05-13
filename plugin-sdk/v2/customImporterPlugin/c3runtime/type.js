@@ -1,19 +1,14 @@
 
-const C3 = self.C3;
+const C3 = globalThis.C3;
 
-C3.Plugins.MyCompany_CustomImporter.Type = class CustomImporterType extends C3.SDKTypeBase
+C3.Plugins.MyCompany_CustomImporter.Type = class CustomImporterType extends globalThis.ISDKObjectTypeBase
 {
-	constructor(objectClass)
+	constructor()
 	{
-		super(objectClass);
+		super();
 	}
 	
-	Release()
-	{
-		super.Release();
-	}
-	
-	OnCreate()
+	_onCreate()
 	{	
 	}
 };

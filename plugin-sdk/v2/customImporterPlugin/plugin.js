@@ -1,5 +1,5 @@
 
-const SDK = self.SDK;
+const SDK = globalThis.SDK;
 
 ////////////////////////////////////////////
 // The plugin ID is how Construct identifies different kinds of plugins.
@@ -12,7 +12,6 @@ const SDK = self.SDK;
 const PLUGIN_ID = "MyCompany_CustomImporter";
 ////////////////////////////////////////////
 
-const PLUGIN_VERSION = "1.0.0.0";
 const PLUGIN_CATEGORY = "general";
 
 // This is the callback passed to AddDragDropFileImportHandler(). Note it is an async function and
@@ -104,12 +103,11 @@ const PLUGIN_CLASS = SDK.Plugins.MyCompany_CustomImporter = class MyCustomImport
 		
 		SDK.Lang.PushContext("plugins." + PLUGIN_ID.toLowerCase());
 		
-		this._info.SetName(self.lang(".name"));
-		this._info.SetDescription(self.lang(".description"));
-		this._info.SetVersion(PLUGIN_VERSION);
+		this._info.SetName(globalThis.lang(".name"));
+		this._info.SetDescription(globalThis.lang(".description"));
 		this._info.SetCategory(PLUGIN_CATEGORY);
 		this._info.SetAuthor("Scirra");
-		this._info.SetHelpUrl(self.lang(".help-url"));
+		this._info.SetHelpUrl(globalThis.lang(".help-url"));
 		this._info.SetIsSingleGlobal(true);
 		
 		SDK.Lang.PushContext(".properties");
