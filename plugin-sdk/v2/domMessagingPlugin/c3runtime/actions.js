@@ -1,5 +1,5 @@
 
-const C3 = self.C3;
+const C3 = globalThis.C3;
 
 C3.Plugins.MyCompany_DOMMessaging.Acts =
 {
@@ -9,7 +9,7 @@ C3.Plugins.MyCompany_DOMMessaging.Acts =
 		this._documentTitle = title;
 
 		// Post a message to the domSide.js script to update the document title.
-		this.PostToDOM("set-document-title", {
+		this._postToDOM("set-document-title", {
 			"title": title
 		});
 	}
