@@ -1,0 +1,54 @@
+﻿{
+	"$schema": "../../../plugin.lang.schema.json",
+
+	"languageTag": "en-US",
+	"fileDescription": "Strings for the sample wrapper extension.",
+	"text": {
+		"plugins": {
+			"mycompany_wrapperext": {
+				"name": "Wrapper extension",
+				"description": "A sample wrapper extension plugin.",
+				"help-url": "https://www.construct.net",
+				"properties": {
+				},
+				"aceCategories": {
+					"wrapper-extension": "Wrapper extension"
+				},
+				"conditions": {
+					"is-available": {
+						"list-name": "Is available",
+						"display-text": "Is available",
+						"description": "True if running in a supported exporter and the extension initialized OK."
+					}
+				},
+				"actions": {
+					"show-messagebox": {
+						"list-name": "Show messagebox",
+						"display-text": "Show messagebox with message [i]{0}[/i], title [i]{1}[/i]",
+						"description": "Sample action to show a messagebox via a Windows API call in the extension.",
+						"params": {
+							"message": {
+								"name": "Message",
+								"desc": "The message to show in the messagebox."
+							},
+							"title": {
+								"name": "Title",
+								"desc": "The title of the messagebox."
+							}
+						}
+					}
+				},
+				"expressions": {
+					"sample-string-1": {
+						"description": "Sample string 1 returned from extension.",
+						"translated-name": "SampleString1"
+					},
+					"sample-string-2": {
+						"description": "Sample string 2 returned from extension.",
+						"translated-name": "SampleString2"
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,27 @@
+﻿{
+	"$schema": "../aces.schema.json",
+	
+	"button": {
+		"conditions": [
+			{
+				"id": "on-click",
+				"scriptName": "OnClick",
+				"isTrigger": true
+			}
+		],
+		"actions": [
+			{
+				"id": "set-text",
+				"scriptName": "SetText",
+				"params": [{	"id": "text",	"type": "string"	}]
+			}
+		],
+		"expressions": [
+			{
+				"id": "text",
+				"expressionName": "Text",
+				"returnType": "string"
+			}
+		]
+	}
+}

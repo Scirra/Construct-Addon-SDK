@@ -1,0 +1,31 @@
+﻿{
+	"$schema": "../../aces.schema.json",
+	
+	"wrapper-extension": {
+		"conditions": [
+			{
+				"id": "is-available",
+				"scriptName": "IsAvailable"
+			}
+		],
+		"actions": [
+			{
+				"id": "show-messagebox",
+				"scriptName": "ShowMessageBox",
+				"params": [{	"id": "message",		"type": "string"	},
+						   {	"id": "title",			"type": "string"	}]
+			}
+		],
+		"expressions": [
+			{
+				"id": "sample-string-1",
+				"expressionName": "SampleString1",
+				"returnType": "string"
+			}, {
+				"id": "sample-string-2",
+				"expressionName": "SampleString2",
+				"returnType": "string"
+			}
+		]
+	}
+}

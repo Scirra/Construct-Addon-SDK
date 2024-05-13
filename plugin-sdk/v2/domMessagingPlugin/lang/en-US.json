@@ -1,0 +1,45 @@
+﻿{
+	"$schema": "../../plugin.lang.schema.json",
+
+	"languageTag": "en-US",
+	"fileDescription": "Strings for DOMMessaging.",
+	"text": {
+		"plugins": {
+			"mycompany_dommessaging": {
+				"name": "MyDOMPlugin",
+				"description": "An example third-party plugin using DOM messaging.",
+				"help-url": "https://www.construct.net",
+				"properties": {
+					"test-property": {
+						"name": "Test property",
+						"desc": "A test number property."
+					}
+				},
+				"aceCategories": {
+					"custom": "Custom"
+				},
+				"conditions": {
+				},
+				"actions": {
+					"set-document-title": {
+						"list-name": "Set document title",
+						"display-text": "Set document title to [b]{0}[/b]",
+						"description": "Set the document title to a string.",
+						"params": {
+							"title": {
+								"name": "Title",
+								"desc": "The document title to set."
+							}
+						}
+					}
+				},
+				"expressions": {
+					"get-document-title": {
+						"description": "Get the current document title.",
+						"translated-name": "DocumentTitle"
+					}
+				}
+			}
+		}
+	}
+}
