@@ -1,5 +1,5 @@
 
-const C3 = self.C3;
+const C3 = globalThis.C3;
 
 C3.Plugins.MyCompany_DrawingPlugin.Exps =
 {

@@ -1,32 +1,27 @@
 
-const C3 = self.C3;
+const C3 = globalThis.C3;
 
-C3.Plugins.MyCompany_DrawingPlugin.Type = class DrawingType extends C3.SDKTypeBase
+C3.Plugins.MyCompany_DrawingPlugin.Type = class DrawingType extends globalThis.ISDKObjectTypeBase
 {
-	constructor(objectClass)
+	constructor()
 	{
-		super(objectClass);
+		super();
 	}
 	
-	Release()
+	_onCreate()
 	{
-		super.Release();
-	}
-	
-	OnCreate()
-	{
-		this.GetImageInfo().LoadAsset(this._runtime);
+		this.runtime.assets.loadImageAsset(this.getImageInfo());
 	}
 
-	LoadTextures(renderer)
+	_loadTextures(renderer)
 	{
-		return this.GetImageInfo().LoadStaticTexture(renderer, {
-			sampling: this._runtime.GetSampling()
+		return renderer.loadTextureForImageInfo(this.getImageInfo(), {
+			sampling: this.runtime.sampling
 		});
 	}
 
-	ReleaseTextures()
+	_releaseTextures(renderer)
 	{
-		this.GetImageInfo().ReleaseTexture();
+		renderer.releaseTextureForImageInfo(this.getImageInfo());
 	}
 };
