@@ -1,5 +1,5 @@
 
-const SDK = self.SDK;
+const SDK = globalThis.SDK;
 
 const PLUGIN_CLASS = SDK.Plugins.MyCompany_WrapperExt;
 
