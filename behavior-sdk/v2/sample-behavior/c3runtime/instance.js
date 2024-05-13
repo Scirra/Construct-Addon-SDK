@@ -1,86 +1,57 @@
 
-const C3 = self.C3;
+const C3 = globalThis.C3;
 
-C3.Behaviors.MyCompany_MyBehavior.Instance = class MyBehaviorInstance extends C3.SDKBehaviorInstanceBase
+C3.Behaviors.MyCompany_MyBehavior.Instance = class MyBehaviorInstance extends globalThis.ISDKBehaviorInstanceBase
 {
-	constructor(behInst, properties)
+	constructor()
 	{
-		super(behInst);
+		super();
 		
 		this._myProperty = 0;
 		
+		const properties = this._getInitProperties();
 		if (properties)
 		{
 			this._myProperty = properties[0];
 		}
 		
-		// Opt-in to getting calls to Tick()
-		//this._StartTicking();
+		// Opt-in to getting calls to _tick()
+		//this._setTicking(true);
 	}
 
-	Release()
+	_release()
 	{
-		super.Release();
+		super._release();
 	}
-
-	_SetMyProperty(n)
+	
+	_setMyProperty(n)
 	{
 		this._myProperty = 0;
 	}
 
-	_GetMyProperty()
+	_getMyProperty()
 	{
 		return this._myProperty;
 	}
 	
-	SaveToJson()
+	_saveToJson()
 	{
 		return {
 			// data to store for savegames
 		};
 	}
 
-	LoadFromJson(o)
+	_loadFromJson(o)
 	{
 		// load state for savegames
 	}
 	
 	/*
-	Tick()
+	_tick()
 	{
-		const dt = this._runtime.GetDt(this._inst);
-		const wi = this._inst.GetWorldInfo();
+		const dt = this.instance.dt;
 		
 		// ... code to run every tick for this behavior ...
 	}
 	*/
-
-	GetScriptInterfaceClass()
-	{
-		return self.IMyBehaviorInstance;
-	}
-};
-
-// Script interface for behavior instance
-const map = new WeakMap();
-
-self.IMyBehaviorInstance = class IMyBehaviorInstance extends self.IBehaviorInstance {
-	constructor()
-	{
-		super();
-		
-		// Map by SDK instance
-		map.set(this, self.IBehaviorInstance._GetInitInst().GetSdkInstance());
-	}
-	
-	// Example setter/getter property on script interface
-	set myProperty(n)
-	{
-		map.get(this)._SetMyProperty(n);
-	}
-
-	get myProperty()
-	{
-		return map.get(this)._GetMyProperty();
-	}
 };

@@ -1,19 +1,15 @@
 
-const C3 = self.C3;
+const C3 = globalThis.C3;
 
-C3.Behaviors.MyCompany_MyBehavior.Type = class MyBehaviorType extends C3.SDKBehaviorTypeBase
+C3.Behaviors.MyCompany_MyBehavior.Type = class MyBehaviorType extends globalThis.ISDKBehaviorTypeBase
 {
-	constructor(behaviorType)
+	constructor()
 	{
-		super(behaviorType);
+		super();
 	}
 	
-	Release()
+	_onCreate()
 	{
-		super.Release();
-	}
-	
-	OnCreate()
-	{	
+		
 	}
 };

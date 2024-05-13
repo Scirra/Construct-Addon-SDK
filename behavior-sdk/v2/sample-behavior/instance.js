@@ -1,5 +1,5 @@
 
-const SDK = self.SDK;
+const SDK = globalThis.SDK;
 
 const BEHAVIOR_CLASS = SDK.Behaviors.MyCompany_MyBehavior;
 

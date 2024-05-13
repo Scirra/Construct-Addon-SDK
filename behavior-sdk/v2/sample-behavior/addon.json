@@ -2,7 +2,7 @@
 	"$schema": "../behavior.addon.schema.json",
 
 	"is-c3-addon": true,
-	"sdk-version": 1,
+	"sdk-version": 2,
 	"type": "behavior",
 	"name": "My custom behavior",
 	"id": "MyCompany_MyBehavior",

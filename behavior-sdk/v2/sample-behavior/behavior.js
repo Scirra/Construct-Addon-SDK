@@ -1,5 +1,5 @@
 
-const SDK = self.SDK;
+const SDK = globalThis.SDK;
 
 ////////////////////////////////////////////
 // The behavior ID is how Construct identifies different kinds of behaviors.
@@ -12,7 +12,6 @@ const SDK = self.SDK;
 const BEHAVIOR_ID = "MyCompany_MyBehavior";
 ////////////////////////////////////////////
 
-const BEHAVIOR_VERSION = "1.0.0.0";
 const BEHAVIOR_CATEGORY = "general";
 
 const BEHAVIOR_CLASS = SDK.Behaviors.MyCompany_MyBehavior = class MyCustomBehavior extends SDK.IBehaviorBase
@@ -23,12 +22,11 @@ const BEHAVIOR_CLASS = SDK.Behaviors.MyCompany_MyBehavior = class MyCustomBehavi
 		
 		SDK.Lang.PushContext("behaviors." + BEHAVIOR_ID.toLowerCase());
 		
-		this._info.SetName(self.lang(".name"));
-		this._info.SetDescription(self.lang(".description"));
-		this._info.SetVersion(BEHAVIOR_VERSION);
+		this._info.SetName(globalThis.lang(".name"));
+		this._info.SetDescription(globalThis.lang(".description"));
 		this._info.SetCategory(BEHAVIOR_CATEGORY);
 		this._info.SetAuthor("Scirra");
-		this._info.SetHelpUrl(self.lang(".help-url"));
+		this._info.SetHelpUrl(globalThis.lang(".help-url"));
 		this._info.SetIsOnlyOneAllowed(true);
 		
 		SDK.Lang.PushContext(".properties");
