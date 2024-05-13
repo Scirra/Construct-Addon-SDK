@@ -1,0 +1,83 @@
+﻿{
+	"$schema": "../../behavior.lang.schema.json",
+
+	"languageTag": "en-US",
+	"fileDescription": "Strings for the 'Basic bullet' SDK sample behavior.",
+	"text": {
+		"behaviors": {
+			"sdksample_basicbullet": {
+				"name": "Basic bullet",
+				"description": "SDK sample behavior for a basic bullet movement.",
+				"help-url": "https://www.construct.net",
+				"properties": {
+					"speed": {
+						"name": "Speed",
+						"desc": "Speed of movement in pixels per second."
+					},
+					"stop-on-solid": {
+						"name": "Stop on solid",
+						"desc": "Whether to automatically stop moving when colliding with a solid."
+					},
+					"enabled": {
+						"name": "Enabled",
+						"desc": "Whether the behavior is initially enabled or disabled."
+					}
+				},
+				"aceCategories": {
+				},
+				"conditions": {
+					"compare-speed": {
+						"list-name": "Compare speed",
+						"display-text": "{my} speed {0} {1}",
+						"description": "Compare the current speed of the behavior.",
+						"params": {
+							"comparison": {
+								"name": "Comparison",
+								"desc": "The comparison to use."
+							},
+							"speed": {
+								"name": "Speed",
+								"desc": "The speed to compare to."
+							}
+						}
+					},
+					"on-hit-solid": {
+						"list-name": "On hit solid",
+						"display-text": "{my} On hit solid",
+						"description": "Triggered when hitting a solid when 'Stop on solid' is enabled."
+					}
+				},
+				"actions": {
+					"set-speed": {
+						"list-name": "Set speed",
+						"display-text": "Set {my} speed to [i]{0}[/i]",
+						"description": "Set the current movement speed.",
+						"params": {
+							"speed": {
+								"name": "Speed",
+								"desc": "The speed to set in pixels per second."
+							}
+						}
+					},
+					"set-enabled": {
+						"list-name": "Set enabled",
+						"display-text": "Set {my} enabled [b]{0}[/b]",
+						"description": "Set whether the behavior is enabled.",
+						"params": {
+							"enabled": {
+								"name": "Enabled",
+								"desc": "Whether to set the behavior enabled or disabled."
+							}
+						}
+					}
+				},
+				"expressions": {
+					"speed": {
+						"description": "The current speed in pixels per second.",
+						"translated-name": "Speed"
+					}
+				}
+			}
+		}
+	}
+}

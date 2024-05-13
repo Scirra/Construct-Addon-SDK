@@ -1,0 +1,38 @@
+﻿{
+	"$schema": "../aces.schema.json",
+	
+	"": {
+		"conditions": [
+			{
+				"id": "compare-speed",
+				"scriptName": "CompareSpeed",
+				"params": [
+					{	"id": "comparison",		"type": "cmp"	},
+					{	"id": "speed",			"type": "number" }
+				]
+			}, {
+				"id": "on-hit-solid",
+				"scriptName": "OnHitSolid",
+				"isTrigger": true
+			}
+		],
+		"actions": [
+			{
+				"id": "set-speed",
+				"scriptName": "SetSpeed",
+				"params": [{ "id": "speed",	"type": "number"	}]
+			}, {
+				"id": "set-enabled",
+				"scriptName": "SetEnabled",
+				"params": [{ "id": "enabled",	"type": "boolean"	}]
+			}
+		],
+		"expressions": [
+			{
+				"id": "speed",
+				"expressionName": "Speed",
+				"returnType": "number"
+			}
+		]
+	}
+}
