@@ -1,20 +1,14 @@
 
-const C3 = self.C3;
+const C3 = globalThis.C3;
 
-C3.Plugins.MyCompany_DOMPlugin.Type = class MyDOMType extends C3.SDKTypeBase
+C3.Plugins.MyCompany_DOMPlugin.Type = class MyDOMType extends globalThis.ISDKObjectTypeBase
 {
-	constructor(objectClass)
+	constructor()
 	{
-		super(objectClass);
+		super();
 	}
 	
-	Release()
+	_onCreate()
 	{
-		super.Release();
-	}
-	
-	OnCreate()
-	{
-		
 	}
 };

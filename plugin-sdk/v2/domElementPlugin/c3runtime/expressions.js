@@ -1,5 +1,5 @@
 
-const C3 = self.C3;
+const C3 = globalThis.C3;
 
 C3.Plugins.MyCompany_DOMPlugin.Exps =
 {
@@ -8,7 +8,7 @@ C3.Plugins.MyCompany_DOMPlugin.Exps =
 		// Return the button text. Note this returns a copy of the text stored in the instance,
 		// since retrieving the real button text would require an asynchronous message posting
 		// from the runtime to the DOM, and expressions must return synchronously.
-		return this._GetText();
+		return this._getText();
 	}
 };
 

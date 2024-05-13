@@ -1,20 +1,21 @@
 
-const C3 = self.C3;
+const C3 = globalThis.C3;
 
 // NOTE: use a unique DOM component ID to ensure it doesn't clash with anything else.
 // This must also match the ID in plugin.js and domSide.js.
 const DOM_COMPONENT_ID = "mycompany-mydomplugin";
 
 // NOTE: DOM instances derive from C3.SDKDOMInstanceBase, not C3.SDKWorldInstanceBase.
-C3.Plugins.MyCompany_DOMPlugin.Instance = class MyDOMInstance extends C3.SDKDOMInstanceBase
+C3.Plugins.MyCompany_DOMPlugin.Instance = class MyDOMInstance extends globalThis.ISDKDOMInstanceBase
 {
-	constructor(inst, properties)
+	constructor()
 	{
-		super(inst, DOM_COMPONENT_ID);
+		super({ domComponentId: DOM_COMPONENT_ID });
 		
 		// Keep a copy of the button text on the instance, so it can be returned from an expression.
 		this._text = "OK";
 		
+		const properties = this._getInitProperties();
 		if (properties)
 		{
 			this._text = properties[0];
@@ -22,15 +23,15 @@ C3.Plugins.MyCompany_DOMPlugin.Instance = class MyDOMInstance extends C3.SDKDOMI
 		
 		// Create an element for this instance. The runtime handles this and will result in a call
 		// to CreateElement() in domSide.js where the real DOM calls are made.
-		this.CreateElement();
+		this._createElement();
 	}
 	
-	Release()
+	_release()
 	{
-		super.Release();
+		super._release();
 	}
 	
-	GetElementState()
+	_getElementState()
 	{
 		// Return JSON with the state of the element. This is passed along to both CreateElement()
 		// and UpdateState() in domSide.js. It provides a convenient way to send all the DOM element
@@ -45,39 +46,39 @@ C3.Plugins.MyCompany_DOMPlugin.Instance = class MyDOMInstance extends C3.SDKDOMI
 	// forwards it to the instance by calling this method (see plugin.js). Note if an object was passed in
 	// the third parameter to PostToRuntimeElement(), this will be passed along as the parameter here,
 	// but in this case it's not used.
-	_OnClick(e)
+	_onClick(e)
 	{
 		// Dispatch script event so callers can use addEventListener("click", ...)
-		this.GetScriptInterface().dispatchEvent(new C3.Event("click", true));
+		this.dispatchEvent(new C3.Event("click", true));
 
 		// Trigger 'On click' in the event system
-		this.Trigger(C3.Plugins.MyCompany_DOMPlugin.Cnds.OnClick);
+		this._trigger(C3.Plugins.MyCompany_DOMPlugin.Cnds.OnClick);
 	}
 
-	_SetText(text)
+	_setText(text)
 	{
 		if (this._text === text)
 			return;						// no change
 		
-		// Update the locally stored text, and call UpdateElementState().
-		// This calls GetElementState() - which contains the button text as part of the state -
+		// Update the locally stored text, and call updateElementState().
+		// This calls getElementState() - which contains the button text as part of the state -
 		// and then calls UpdateState() in domSide.js with the state object, where the button text
 		// is applied to the DOM element.
 		this._text = text;
-		this.UpdateElementState();
+		this._updateElementState();
 	}
 
-	_GetText()
+	_getText()
 	{
 		return this._text;
 	}
 	
-	Draw(renderer)
+	_draw(renderer)
 	{
 		// not used - a DOM element is positioned at this instance instead
 	}
 	
-	SaveToJson()
+	_saveToJson()
 	{
 		return {
 			// data to be saved for savegames
@@ -85,41 +86,11 @@ C3.Plugins.MyCompany_DOMPlugin.Instance = class MyDOMInstance extends C3.SDKDOMI
 		};
 	}
 	
-	LoadFromJson(o)
+	_loadFromJson(o)
 	{
 		// load state for savegames
 		this._text = o["text"];
 		
-		this.UpdateElementState();		// ensures any state changes are updated in the DOM
-	}
-
-	GetScriptInterfaceClass()
-	{
-		return self.IMyDOMInstance;
-	}
-};
-
-// Script interface. Use a WeakMap to safely hide the internal implementation details from the
-// caller using the script interface.
-const map = new WeakMap();
-
-self.IMyDOMInstance = class IMyDOMInstance extends self.IDOMInstance {
-	constructor()
-	{
-		super();
-		
-		// Map by SDK instance
-		map.set(this, self.IInstance._GetInitInst().GetSdkInstance());
-	}
-
-	// Example setter/getter property on script interface
-	set text(t)
-	{
-		map.get(this)._SetText(t);
-	}
-
-	get text()
-	{
-		return map.get(this)._GetText();
+		this._updateElementState();		// ensures any state changes are updated in the DOM
 	}
 };

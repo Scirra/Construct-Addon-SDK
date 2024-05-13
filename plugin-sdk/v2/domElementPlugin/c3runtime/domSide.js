@@ -23,7 +23,7 @@
 		e.stopPropagation();
 	}
 
-	const HANDLER_CLASS = class MyDOMHandler extends self.DOMElementHandler
+	const HANDLER_CLASS = class MyDOMHandler extends globalThis.DOMElementHandler
 	{
 		constructor(iRuntime)
 		{
@@ -72,5 +72,5 @@
 		}
 	};
 	
-	self.RuntimeInterface.AddDOMHandlerClass(HANDLER_CLASS);
+	globalThis.RuntimeInterface.AddDOMHandlerClass(HANDLER_CLASS);
 }

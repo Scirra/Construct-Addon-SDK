@@ -1,5 +1,5 @@
 
-const SDK = self.SDK;
+const SDK = globalThis.SDK;
 
 ////////////////////////////////////////////
 // The plugin ID is how Construct identifies different kinds of plugins.
@@ -12,7 +12,6 @@ const SDK = self.SDK;
 const PLUGIN_ID = "MyCompany_DOMPlugin";
 ////////////////////////////////////////////
 
-const PLUGIN_VERSION = "1.0.0.0";
 const PLUGIN_CATEGORY = "form-controls";	// The 'Form controls' category is recommended for DOM element plugins
 
 let app = null;
@@ -25,12 +24,11 @@ const PLUGIN_CLASS = SDK.Plugins.MyCompany_DOMPlugin = class MyDrawingPlugin ext
 		
 		SDK.Lang.PushContext("plugins." + PLUGIN_ID.toLowerCase());
 		
-		this._info.SetName(self.lang(".name"));
-		this._info.SetDescription(self.lang(".description"));
-		this._info.SetVersion(PLUGIN_VERSION);
+		this._info.SetName(globalThis.lang(".name"));
+		this._info.SetDescription(globalThis.lang(".description"));
 		this._info.SetCategory(PLUGIN_CATEGORY);
 		this._info.SetAuthor("Scirra");
-		this._info.SetHelpUrl(self.lang(".help-url"));
+		this._info.SetHelpUrl(globalThis.lang(".help-url"));
 		this._info.SetPluginType("world");			// mark as world plugin since it's placed in the layout
 		this._info.SetIsResizable(true);			// allow to be resized
 		
