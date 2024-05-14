@@ -11,7 +11,7 @@
         },
         "sdk-version": {
             "description": "The version of the Addon SDK used for this addon.",
-            "type": "number"
+            "enum": [1, 2]
         },
         "type": {
             "description": "Indicates the addon type. For the plugin schema, this must be \"plugin\".",
