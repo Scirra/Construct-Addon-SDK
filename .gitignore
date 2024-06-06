@@ -1,6 +1,7 @@
 .vs
 *.c3addon
 *.vcxproj.user
+ts-defs
 /plugin-sdk/wrapperExtensionPlugin/extension/x64/
 /plugin-sdk/wrapperExtensionPlugin/extension/ARM64/
 /plugin-sdk/wrapperExtensionPlugin/extension/Win32/
