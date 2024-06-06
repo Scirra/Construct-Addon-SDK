@@ -26,7 +26,7 @@ C3.Behaviors.MyCompany_MyBehavior.Instance = class MyBehaviorInstance extends gl
 	
 	_setMyProperty(n)
 	{
-		this._myProperty = 0;
+		this._myProperty = n;
 	}
 
 	_getMyProperty()
