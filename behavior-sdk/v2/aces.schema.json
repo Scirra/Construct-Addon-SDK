@@ -192,6 +192,10 @@
                     "type": "array",
                     "items": { "type": "string" },
                     "minItems": 1
+                },
+                "autocompleteId": {
+                    "description": "Optional and only valid with the \"string\" type. Set to a globally unique ID and string constants with the same ID will offer autocomplete in the editor. Useful for tag parameters.",
+                    "type": "string"
                 }
             },
             "required": ["id", "type"]
