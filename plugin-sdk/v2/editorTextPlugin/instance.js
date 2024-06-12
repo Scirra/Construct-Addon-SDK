@@ -46,7 +46,7 @@ PLUGIN_CLASS.Instance = class MyTextInstance extends SDK.IWorldInstanceBase
 			return;		// already created
 		
 		// Create the IWebGLText from the renderer.
-		this._webglText = iRenderer.CreateWebGLText();
+		this._webglText = iRenderer.CreateRendererText();
 		this._webglText.SetFontSize(12);		// 12pt default size
 		
 		// By default IWebGLText updates its texture asynchronously. When the texture changes the layout view needs to
