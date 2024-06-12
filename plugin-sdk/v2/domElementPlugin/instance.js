@@ -41,7 +41,7 @@ PLUGIN_CLASS.Instance = class MyDOMInstance extends SDK.IWorldInstanceBase
 	{
 		if (!this._webglText)		// lazy-create
 		{
-			this._webglText = iRenderer.CreateWebGLText();
+			this._webglText = iRenderer.CreateRendererText();
 			this._webglText.SetFontSize(11);
 			this._webglText.SetTextureUpdateCallback(() => iLayoutView.Refresh());
 			this._webglText.SetHorizontalAlignment("center");
