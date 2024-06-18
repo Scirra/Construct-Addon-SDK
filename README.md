@@ -13,6 +13,10 @@ Refer to the [Addon SDK manual](https://www.construct.net/make-games/manuals/add
 
 The SDK includes [JSON schemas](https://json-schema.org/) for addon metadata (*addon.json*), action/condition/expression definitions (*aces.json*) and language (*en-US.json*) files. With a compatible editor like [VS Code](https://code.visualstudio.com/), this allows validation and autocomplete of these kinds of JSON files, which can make it much easier to write them correctly. If you change the folder structure of the SDK, make sure the special `"$schema"` key at the start of the JSON file points to the relevant schema file, e.g. `"../aces.schema.json"`.
 
+## TypeScript
+
+The addon SDK has optional support for [TypeScript](https://www.typescriptlang.org/). See the section on [TypeScript support](https://www.construct.net/en/make-games/manuals/addon-sdk/guide/typescript-support) in the Addon SDK documentation for more details. If you prefer to use JavaScript, just ignore or delete the .ts files in the SDK samples.
+
 ## Support
 
 Post to the [Plugin SDK forum](https://www.construct.net/en/forum/construct-3/plugin-sdk-10) for general questions and help. If you think you've run in to a problem with Construct itself, please [file an issue](https://github.com/Scirra/Construct-bugs).
@@ -20,6 +24,10 @@ Post to the [Plugin SDK forum](https://www.construct.net/en/forum/construct-3/pl
 ## Contributions
 
 We are hosting the SDK files on GitHub, but we don't intend to accept contributions to this code. Feel free to start a new repository if you want to provide additional SDK samples or an altered version of the SDK.
+
+# Addon SDK v2
+
+The addon SDK is currently in the process of being migrated from a legacy SDK (v1) to an updated modern SDK with industry-standard encapsulation (v2). The addon SDK v1 will be retired in mid-2025. New addons should be developed using the Addon SDK v2, and old addons should be ported (see [Porting to Addon SDK v2](https://www.construct.net/en/make-games/manuals/addon-sdk/guide/porting-addon-sdk-v2) for a guide on updating SDK v1 addons). For more details see [this forum thread](https://www.construct.net/en/forum/construct-3/plugin-sdk-10/addon-sdk-v2-182122).
 
 # Samples
 
