@@ -28,6 +28,7 @@ const BEHAVIOR_CLASS = SDK.Behaviors.SDKSample_BasicBullet = class BasicBulletBe
 		this._info.SetAuthor("Scirra");
 		this._info.SetHelpUrl(globalThis.lang(".help-url"));
 		this._info.SetIsOnlyOneAllowed(true);
+		this._info.SetRuntimeModuleMainScript("c3runtime/main.js");
 		
 		SDK.Lang.PushContext(".properties");
 		

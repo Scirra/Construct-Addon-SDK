@@ -33,7 +33,7 @@ C3.Plugins.MyCompany_WrapperExt.Instance = class MyCompany_WrapperExtInstance ex
 		{
 			// If the wrapper extension is available, call _init() and add it as a loading promise
 			// so Construct will wait for it to complete before starting the project.
-			this.runtime.addLoadPromise(this._init());
+			this.runtime.sdk.addLoadPromise(this._init());
 		}
 	}
 	

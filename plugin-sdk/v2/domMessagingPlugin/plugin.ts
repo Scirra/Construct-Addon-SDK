@@ -28,6 +28,7 @@ const PLUGIN_CLASS = SDK.Plugins.MyCompany_DOMMessaging = class MyCustomPlugin e
 		this._info.SetAuthor("Scirra");
 		this._info.SetHelpUrl(globalThis.lang(".help-url"));
 		this._info.SetIsSingleGlobal(true);
+		this._info.SetRuntimeModuleMainScript("c3runtime/main.js");
 
 		// Set the domSide.js script to run in the context of the DOM
 		this._info.SetDOMSideScripts(["c3runtime/domSide.js"]);

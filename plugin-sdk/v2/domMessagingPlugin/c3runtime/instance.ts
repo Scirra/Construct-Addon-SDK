@@ -30,7 +30,7 @@ class DOMMessagingInstance extends globalThis.ISDKInstanceBase
 
 		// Post to the DOM to retrieve the initial state, which makes sure that the initial document
 		// title held on the runtime side is correct on startup. Make runtime loading wait for the response.
-		this.runtime.addLoadPromise(
+		this.runtime.sdk.addLoadPromise(
 			this._postToDOMAsync("get-initial-state")
 			.then(data_ =>
 			{

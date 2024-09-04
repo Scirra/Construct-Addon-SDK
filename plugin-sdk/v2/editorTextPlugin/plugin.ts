@@ -34,6 +34,7 @@ const PLUGIN_CLASS = SDK.Plugins.MyCompany_TextPlugin = class MyTextPlugin exten
 		this._info.SetIsRotatable(true);			// allow to be rotated
 		this._info.SetSupportsEffects(true);		// allow effects
 		this._info.SetMustPreDraw(true);
+		this._info.SetRuntimeModuleMainScript("c3runtime/main.js");
 		
 		SDK.Lang.PushContext(".properties");
 		

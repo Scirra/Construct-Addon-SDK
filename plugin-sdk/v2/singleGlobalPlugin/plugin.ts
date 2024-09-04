@@ -28,6 +28,7 @@ const PLUGIN_CLASS = SDK.Plugins.MyCompany_SingleGlobal = class MyCustomPlugin e
 		this._info.SetAuthor("Scirra");
 		this._info.SetHelpUrl(globalThis.lang(".help-url"));
 		this._info.SetIsSingleGlobal(true);
+		this._info.SetRuntimeModuleMainScript("c3runtime/main.js");
 		
 		SDK.Lang.PushContext(".properties");
 		

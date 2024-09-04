@@ -31,6 +31,7 @@ const PLUGIN_CLASS = SDK.Plugins.MyCompany_DOMPlugin = class MyDrawingPlugin ext
 		this._info.SetHelpUrl(globalThis.lang(".help-url"));
 		this._info.SetPluginType("world");			// mark as world plugin since it's placed in the layout
 		this._info.SetIsResizable(true);			// allow to be resized
+		this._info.SetRuntimeModuleMainScript("c3runtime/main.js");
 		
 		// Load domSide.js in the document context (main thread).
 		// This is important for supporting the runtime's web worker mode.

@@ -37,6 +37,7 @@ const PLUGIN_CLASS = SDK.Plugins.MyCompany_DrawingPlugin = class MyDrawingPlugin
 		this._info.SetHasImage(true);
 		this._info.SetSupportsEffects(true);		// allow effects
 		this._info.SetMustPreDraw(true);
+		this._info.SetRuntimeModuleMainScript("c3runtime/main.js");
 		
 		SDK.Lang.PushContext(".properties");
 		
