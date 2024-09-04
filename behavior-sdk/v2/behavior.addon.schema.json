@@ -29,6 +29,14 @@
             "description": "A string specifying the addon version in four parts (major, minor, patch, revision).",
             "type": "string"
         },
+        "min-construct-version": {
+            "description": "The minimum Construct version required to use this addon, e.g. \"r400\"",
+            "type": "string"
+        },
+        "supports-worker-mode": {
+            "description": "Whether the addon supports running in worker mode, where the Construct runtime is hosted in a Web Worker. Defaults to true; if set to false the presence of the addon in a project will block the runtime from using worker mode.",
+            "type": "boolean"
+        },
         "author": {
             "description": "A string identifying the author of the addon.",
             "type": "string"
