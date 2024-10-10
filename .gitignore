@@ -8,3 +8,4 @@ ts-defs
 /plugin-sdk/v2/wrapperExtensionPlugin/construct-plugin/*.exp
 /plugin-sdk/v2/wrapperExtensionPlugin/construct-plugin/*.lib
 /plugin-sdk/v2/wrapperExtensionPlugin/construct-plugin/*.pdb
+/plugin-sdk/v2/wrapperExtensionPlugin/extension/WrapperExtension/
