@@ -230,7 +230,6 @@
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h" />
     <ClInclude Include="IApplication.h" />
     <ClInclude Include="IExtension.h" />
     <ClInclude Include="pch.h" />

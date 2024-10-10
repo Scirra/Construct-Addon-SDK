@@ -18,9 +18,6 @@
     <None Include="cpp.hint" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="framework.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="WrapperExtension.h">
       <Filter>Header Files</Filter>
     </ClInclude>

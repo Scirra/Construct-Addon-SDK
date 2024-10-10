@@ -1,6 +1,8 @@
 
 #include "pch.h"
 
+#ifdef _WIN32
+
 std::wstring Utf8ToWide(const std::string& utf8string)
 {
 	// Empty strings are equivalent
@@ -48,6 +50,8 @@ std::string WideToUtf8(const std::wstring& widestring)
 	// Return converted string
 	return buffer;
 }
+
+#endif // _WIN32
 
 // Unpack parameters in plain-old-data (POD) format from the host app to a more useful
 // type with a vector of ExtensionParameter.

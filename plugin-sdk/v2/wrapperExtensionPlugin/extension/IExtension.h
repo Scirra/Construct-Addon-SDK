@@ -1,6 +1,5 @@
 #pragma once
 
-#include <windows.h>
 #include <string>
 
 // This file mainly includes implementation details of the SDK.
@@ -18,12 +17,12 @@ enum ExtensionParameterType {
 struct ExtensionParameterPOD {
 	ExtensionParameterType type;
 	double number;
-	LPCSTR str;
+	const char* str;
 };
 
 // A parameter key and value in POD format for crossing DLL boundary
 struct NamedExtensionParameterPOD {
-	LPCSTR key;
+	const char* key;
 	ExtensionParameterPOD value;
 };
 
@@ -51,14 +50,14 @@ struct ExtensionParameter {
 
 	ExtensionParameter(const std::string& s)
 		: type(EPT_String),
-		  str(s),
-		  number(0.0)
+		  number(0.0),
+		  str(s)
 	{}
 
-	ExtensionParameter(LPCSTR s)
+	ExtensionParameter(const char* s)
 		: type(EPT_String),
-		  str(s),
-		  number(0.0)
+		  number(0.0),
+		  str(s)
 	{}
 
 	// Getter methods
@@ -89,7 +88,7 @@ public:
 	// Called when a message received from JavaScript with a matching component ID.
 	// Use HandleWebMessage on the WrapperExtension class instead, since that manages
 	// the details of marshalling the binary data for you.
-	virtual void OnWebMessage(LPCSTR messageId, size_t paramCount, const ExtensionParameterPOD* paramArr, double asyncId) = 0;
+	virtual void OnWebMessage(const char* messageId, size_t paramCount, const ExtensionParameterPOD* paramArr, double asyncId) = 0;
 
 	// Called during startup when the main application creates its window.
 	// It passes the HWND of the main window which the extension can store

@@ -1,6 +1,5 @@
 
 #include "pch.h"
-#include "framework.h"
 #include "WrapperExtension.h"
 
 //////////////////////////////////////////////////////
@@ -18,7 +17,7 @@ extern "C" {
 
 // Helper method to call HandleWebMessage() with more useful types, as OnWebMessage() must deal with
 // plain-old-data types for crossing a DLL boundary.
-void WrapperExtension::OnWebMessage(LPCSTR messageId_, size_t paramCount, const ExtensionParameterPOD* paramArr, double asyncId)
+void WrapperExtension::OnWebMessage(const char* messageId_, size_t paramCount, const ExtensionParameterPOD* paramArr, double asyncId)
 {
 	HandleWebMessage(messageId_, UnpackExtensionParameterArray(paramCount, paramArr), asyncId);
 }

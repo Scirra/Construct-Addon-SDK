@@ -8,6 +8,21 @@
 #define PCH_H
 
 // add headers that you want to pre-compile here
-#include "framework.h"
+
+#ifdef _WIN32
+
+// Windows Header Files
+#define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
+#include <windows.h>
+
+#endif
+
+// STL includes
+#include <vector>		// std::vector
+#include <map>			// std::map
+#include <string>		// std::string, std::wstring
+
+// SDK utilities
+#include "Utils.h"
 
 #endif //PCH_H

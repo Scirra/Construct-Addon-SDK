@@ -2,6 +2,10 @@
 #include "IApplication.h"
 #include "IExtension.h"
 
+#include <string>
+#include <vector>
+#include <map>
+
 // Main class for your wrapper extension DLL.
 class WrapperExtension : public IExtension {
 public:
@@ -10,7 +14,7 @@ public:
 	// IExtension overrides
 	void Init();
 	void Release();
-	void OnWebMessage(LPCSTR messageId, size_t paramCount, const ExtensionParameterPOD* paramArr, double asyncId);
+	void OnWebMessage(const char* messageId, size_t paramCount, const ExtensionParameterPOD* paramArr, double asyncId);
 	void OnMainWindowCreated(HWND hWnd_);
 
 	// Web messaging methods
