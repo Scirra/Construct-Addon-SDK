@@ -2,9 +2,9 @@
 *.c3addon
 *.vcxproj.user
 ts-defs
-/plugin-sdk/wrapperExtensionPlugin/extension/x64/
-/plugin-sdk/wrapperExtensionPlugin/extension/ARM64/
-/plugin-sdk/wrapperExtensionPlugin/extension/Win32/
-/plugin-sdk/wrapperExtensionPlugin/construct-plugin/*.exp
-/plugin-sdk/wrapperExtensionPlugin/construct-plugin/*.lib
-/plugin-sdk/wrapperExtensionPlugin/construct-plugin/*.pdb
+/plugin-sdk/v2/wrapperExtensionPlugin/extension/x64/
+/plugin-sdk/v2/wrapperExtensionPlugin/extension/ARM64/
+/plugin-sdk/v2/wrapperExtensionPlugin/extension/Win32/
+/plugin-sdk/v2/wrapperExtensionPlugin/construct-plugin/*.exp
+/plugin-sdk/v2/wrapperExtensionPlugin/construct-plugin/*.lib
+/plugin-sdk/v2/wrapperExtensionPlugin/construct-plugin/*.pdb
