@@ -15,6 +15,14 @@
 #define WIN32_LEAN_AND_MEAN		// Exclude rarely-used stuff from Windows headers
 #include <windows.h>
 
+#define DLLEXPORT __declspec(dllexport)
+
+#else
+
+// Empty defines for non-Microsoft platforms
+#define DECLSPEC_NOVTABLE
+#define DLLEXPORT
+
 #endif
 
 // STL includes

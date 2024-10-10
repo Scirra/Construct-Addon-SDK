@@ -15,7 +15,11 @@ public:
 	void Init();
 	void Release();
 	void OnWebMessage(const char* messageId, size_t paramCount, const ExtensionParameterPOD* paramArr, double asyncId);
+#ifdef _WIN32
 	void OnMainWindowCreated(HWND hWnd_);
+#else
+        void OnMainWindowCreated();
+#endif
 
 	// Web messaging methods
 	void HandleWebMessage(const std::string& messageId, const std::vector<ExtensionParameter>& params, double asyncId);
@@ -28,5 +32,8 @@ public:
 
 protected:
 	IApplication* iApplication;
+	
+#ifdef _WIN32
 	HWND hWndMain;
+#endif
 };

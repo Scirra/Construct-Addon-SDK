@@ -93,7 +93,11 @@ public:
 	// Called during startup when the main application creates its window.
 	// It passes the HWND of the main window which the extension can store
 	// and refer to later if necessary.
+#ifdef _WIN32
 	virtual void OnMainWindowCreated(HWND hWnd) = 0;
+#else
+        virtual void OnMainWindowCreated() = 0;
+#endif
 	
 	// Called during startup after all extensions have been loaded.
 	// Therefore if you need to use shared data from another extension, this is the

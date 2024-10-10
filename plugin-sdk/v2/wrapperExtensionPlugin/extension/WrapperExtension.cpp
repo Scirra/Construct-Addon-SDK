@@ -2,13 +2,17 @@
 #include "pch.h"
 #include "WrapperExtension.h"
 
+#ifdef __linux__
+#include <gtk/gtk.h>
+#endif
+
 //////////////////////////////////////////////////////
 // Boilerplate stuff - don't change
 WrapperExtension* g_Extension = nullptr;
 
 // Main DLL export function to initialize extension.
 extern "C" {
-	__declspec(dllexport) IExtension* WrapperExtInit(IApplication* iApplication)
+	DLLEXPORT IExtension* WrapperExtInit(IApplication* iApplication)
 	{
 		g_Extension = new WrapperExtension(iApplication);
 		return g_Extension;
@@ -40,9 +44,12 @@ void WrapperExtension::SendAsyncResponse(const std::map<std::string, ExtensionPa
 //////////////////////////////////////////////////////
 // Custom implementation for your wrapper extension
 WrapperExtension::WrapperExtension(IApplication* iApplication_)
-	: iApplication(iApplication_),
-	  hWndMain(NULL)
+	: iApplication(iApplication_)
 {
+#ifdef _WIN32
+        hWndMain = NULL;
+#endif
+
 	// Tell the host application the SDK version used. Don't change this.
 	iApplication->SetSdkVersion(WRAPPER_EXT_SDK_VERSION);
 
@@ -64,12 +71,19 @@ void WrapperExtension::Release()
 	// Called during application exit to allow your extension to release any resources it was using.
 }
 
+#ifdef _WIN32
 void WrapperExtension::OnMainWindowCreated(HWND hWnd)
 {
 	// Called during startup when the main window is created.
 	// The HWND is saved in case it's needed later on.
 	hWndMain = hWnd;
 }
+#else
+void WrapperExtension::OnMainWindowCreated()
+{
+	// not used
+}
+#endif
 
 // For handling a message sent from JavaScript, sent via either SendWrapperExtensionMessage()
 // or SendWrapperExtensionMessageAsync(). The async variant sets 'asyncId' and will expect a response
@@ -123,11 +137,29 @@ void WrapperExtension::OnInitMessage(double asyncId)
 
 void WrapperExtension::OnShowMessageBox(const std::string& message, const std::string& title)
 {
-	// A sample action to show a messagebox using the Windows MessageBox() API.
+	// A sample action to show a messagebox using the MessageBox() API
+	// on Windows and GTK message dialogs on Linux.
+        
+#ifdef _WIN32
+	// Windows implementation
 	// Note that the extension SDK mostly uses single-byte UTF-8 strings, but Windows typically
 	// uses double-byte wide strings. Use the Utf8ToWide() utility method to convert to wide strings.
 	std::wstring messageW = Utf8ToWide(message);
 	std::wstring titleW = Utf8ToWide(title);
 
 	MessageBox(hWndMain, messageW.c_str(), titleW.c_str(), MB_OK);
+#else
+	// Linux GDK implementation
+	GtkWidget* dlg = gtk_message_dialog_new(
+		NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_OK,
+		"%s", title.c_str());
+	
+	gtk_message_dialog_format_secondary_text(
+		GTK_MESSAGE_DIALOG(dlg),
+		"%s", message.c_str());
+	
+	gtk_dialog_run(GTK_DIALOG(dlg));
+	
+	gtk_widget_destroy(dlg);
+#endif
 }
