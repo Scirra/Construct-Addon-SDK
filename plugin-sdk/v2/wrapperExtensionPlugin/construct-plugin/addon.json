@@ -33,6 +33,7 @@
 		"plugin.js",
 		"type.js",
 		"MyExtension_x86.ext.dll",
-		"MyExtension_x64.ext.dll"
+		"MyExtension_x64.ext.dll",
+		"my_extension_x64.ext.so"
 	]
 }

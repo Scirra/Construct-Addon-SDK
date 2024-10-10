@@ -40,7 +40,7 @@ const PLUGIN_CLASS = SDK.Plugins.MyCompany_WrapperExt = class MyCompany_WrapperE
 		
 		SDK.Lang.PopContext();
 		
-		// Bundle your extension DLLs with WebView2 exports by specifying
+		// Bundle your extension DLLs with Windows WebView2 exports by specifying
 		// the DLLs as "wrapper-extension" file dependencies. This plugin specifies
 		// both x86 (32-bit) and x64 (64-bit) architecture DLLs, and you can
 		// optionally also specify ARM64 architecture DLLs.
@@ -56,7 +56,7 @@ const PLUGIN_CLASS = SDK.Plugins.MyCompany_WrapperExt = class MyCompany_WrapperE
 			platform: "windows-x64"
 		});
 		
-		// Use this if you build an ARM64 DLL.
+		// Use this if you build a Windows ARM64 DLL.
 		/*
 		this._info.AddFileDependency({
 			filename: "MyExtension_arm64.ext.dll",
@@ -64,6 +64,13 @@ const PLUGIN_CLASS = SDK.Plugins.MyCompany_WrapperExt = class MyCompany_WrapperE
 			platform: "windows-arm64"
 		});
 		*/
+
+		// Also bundle a Linux wrapper extension for Linux CEF x64.
+		this._info.AddFileDependency({
+			filename: "my_extension_x64.ext.so",
+			type: "wrapper-extension",
+			platform: "linux-x64"
+		});
 	}
 };
 
