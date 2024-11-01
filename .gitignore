@@ -10,3 +10,5 @@ ts-defs
 /plugin-sdk/v2/wrapperExtensionPlugin/construct-plugin/*.pdb
 /plugin-sdk/v2/wrapperExtensionPlugin/extension/WrapperExtension/
 plugin-sdk/v2/wrapperExtensionPlugin/extension/build/
+.DS_Store
+xcuserdata/

@@ -2,7 +2,9 @@
 #include "pch.h"
 #include "WrapperExtension.h"
 
-#ifdef __linux__
+#ifdef __APPLE__
+#import <Cocoa/Cocoa.h>
+#elif __linux__
 #include <gtk/gtk.h>
 #endif
 
@@ -148,8 +150,35 @@ void WrapperExtension::OnShowMessageBox(const std::string& message, const std::s
 	std::wstring titleW = Utf8ToWide(title);
 
 	MessageBox(hWndMain, messageW.c_str(), titleW.c_str(), MB_OK);
-#else
+#elif __APPLE__
+    
+    // macOS implementation
+    // Note that these .cpp files have been configured with the type
+    // 'Objective-C++ source' in Xcode, which allows mixing in Objective-C
+    // style code like the code here as well as the #import <Cocoa/Cocoa.h>
+    // at the top of this file with the rest of your regular cross-platform
+    // C++ code. This approach is useful for interacting with platform
+    // libraries like Cocoa, but note if you don't want to use Cocoa in your
+    // wrapper extension you may want to remove its references (including
+    // linking to Cocoa.framework in Xcode).
+    
+    // Convert std::string to NSString*
+    NSString* nsMessage = [NSString stringWithUTF8String:message.c_str()];
+    NSString* nsTitle = [NSString stringWithUTF8String:title.c_str()];
+    
+    NSAlert* alert = [[NSAlert alloc] init];
+    [alert setAlertStyle:NSAlertStyleInformational];
+    [alert setMessageText:nsTitle];
+    [alert setInformativeText:nsMessage];
+    
+    [alert runModal];
+    
+#else   // linux
 	// Linux GDK implementation
+    // Note CMakeLists.txt configures the build to include and link to GTK
+    // and include <gtk/gtk.h> at the top of this file for this sample code.
+    // If you don't need to use GTK in your wrapper extension you should
+    // remove these GTK references.
 	GtkWidget* dlg = gtk_message_dialog_new(
 		NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_OK,
 		"%s", title.c_str());
