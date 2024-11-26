@@ -174,7 +174,7 @@ void WrapperExtension::OnShowMessageBox(const std::string& message, const std::s
     [alert runModal];
     
 #else   // linux
-	// Linux GDK implementation
+	// Linux GTK implementation
     // Note CMakeLists.txt configures the build to include and link to GTK
     // and include <gtk/gtk.h> at the top of this file for this sample code.
     // If you don't need to use GTK in your wrapper extension you should
