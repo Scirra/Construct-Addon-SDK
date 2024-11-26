@@ -37,4 +37,8 @@ public:
 	virtual void SetSharedPtr(const char* id, void* ptr) = 0;
 	virtual void* GetSharedPtr(const char* id) = 0;
 	virtual void RemoveSharedPtr(const char* id) = 0;
+
+	// Look up the full path for a special picker tag as used by File System, e.g. "<documents>".
+	// Windows only.
+	virtual const char* GetPathForKnownPickerTag(const char* pickerTag) = 0;
 };
