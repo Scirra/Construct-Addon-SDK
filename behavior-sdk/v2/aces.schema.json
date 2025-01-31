@@ -175,7 +175,7 @@
                 },
                 "type": {
                     "description": "The parameter type.",
-                    "enum": ["number", "string", "any", "boolean", "combo", "cmp", "object", "objectname", "layer", "layout", "keyb", "instancevar", "instancevarbool", "eventvar", "eventvarbool", "animation", "objinstancevar"]
+                    "enum": ["number", "string", "any", "boolean", "combo", "combo-grouped", "cmp", "object", "objectname", "layer", "layout", "keyb", "instancevar", "instancevarbool", "eventvar", "eventvarbool", "animation", "objinstancevar"]
                 },
                 "initialValue": {
                     "description": "A string which is used as the initial expression for expression-based parameters. Note this is still a string for \"number\" type parameters. It can contain any valid expression for the parameter, such as \"1 + 1\". For \"boolean\" parameters, use a string of either \"true\" or \"false\". For \"combo\" parameters, this is the initial item ID.",
@@ -185,6 +185,27 @@
                     "description": "Only valid with the \"combo\" type. Set to an array of item IDs available in the dropdown list.",
                     "type": "array",
                     "items": { "type": "string" },
+                    "minItems": 1
+                },
+                "itemGroups": {
+                    "description": "Only valid with the \"combo-grouped\" type. Set to an array of item groups available in the dropdown list.",
+                    "type": "array",
+                    "items": {
+                        "description": "A combo item group.",
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "description": "The combo item group ID.",
+                                "type": "string"
+                            },
+                            "items": {
+                                "description": "Array of item IDs available in this item group.",
+                                "type": "array",
+                                "items": { "type": "string" },
+                                "minItems": 1
+                            }
+                        }
+                    },
                     "minItems": 1
                 },
                 "allowedPluginIds": {

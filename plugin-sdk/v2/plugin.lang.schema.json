@@ -52,6 +52,9 @@
                                         "items": {
                                             "$ref": "#/$defs/comboItems"
                                         },
+                                        "itemGroups": {
+                                            "$ref": "#/$defs/comboItemGroups"
+                                        },
                                         "link-text": {
                                             "description": "Link text for a \"link\" type property.",
                                             "type": "string"
@@ -173,12 +176,31 @@
             "additionalProperties": false
         },
         "comboItems": {
-            "description": "Items for a combo property or parameter.",
+            "description": "Items for a combo property, parameter or group.",
             "type": "object",
             "minProperties": 1,
             "additionalProperties": {
                 "description": "Language string for a combo item, with the item ID as the key.",
                 "type": "string"
+            }
+        },
+        "comboItemGroups": {
+            "description": "Items for a combo-grouped parameter.",
+            "type": "object",
+            "minProperties": 1,
+            "additionalProperties": {
+                "description": "Language string for a combo item group.",
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "description": "Name of this combo item group.",
+                        "type": "string"
+                    },
+                    "items": {
+                        "$ref": "#/$defs/comboItems"
+                    }
+                },
+                "required": ["name", "items"]
             }
         }
     }
