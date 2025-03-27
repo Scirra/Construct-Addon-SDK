@@ -175,7 +175,7 @@
                 },
                 "type": {
                     "description": "The parameter type.",
-                    "enum": ["number", "string", "any", "boolean", "combo", "combo-grouped", "cmp", "object", "objectname", "layer", "layout", "keyb", "instancevar", "instancevarbool", "eventvar", "eventvarbool", "animation", "objinstancevar"]
+                    "enum": ["number", "string", "any", "boolean", "combo", "combo-grouped", "cmp", "object", "objectname", "layer", "layout", "keyb", "instancevar", "instancevarbool", "eventvar", "eventvarbool", "animation", "objinstancevar", "projectfile"]
                 },
                 "initialValue": {
                     "description": "A string which is used as the initial expression for expression-based parameters. Note this is still a string for \"number\" type parameters. It can contain any valid expression for the parameter, such as \"1 + 1\". For \"boolean\" parameters, use a string of either \"true\" or \"false\". For \"combo\" parameters, this is the initial item ID.",
@@ -207,6 +207,10 @@
                         }
                     },
                     "minItems": 1
+                },
+                "filter": {
+                    "description": "Only valid with the \"projectfile\" type. Set to a string of a file extension e.g. \".txt\" to filter the project file list by.",
+                    "type": "string"
                 },
                 "allowedPluginIds": {
                     "description": "Optional and only valid with the \"object\" type. Set to an array of plugin IDs allowed to be shown by the object picker. For example, use [\"Sprite\"] to only allow the object parameter to select a Sprite.",
