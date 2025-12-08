@@ -25,9 +25,9 @@ Post to the [Plugin SDK forum](https://www.construct.net/en/forum/construct-3/pl
 
 We are hosting the SDK files on GitHub, but we don't intend to accept contributions to this code. Feel free to start a new repository if you want to provide additional SDK samples or an altered version of the SDK.
 
-# Addon SDK v2
+## Compatibility
 
-The addon SDK is currently in the process of being migrated from a legacy SDK (v1) to an updated modern SDK with industry-standard encapsulation (v2). The addon SDK v1 will be retired in mid-2025. New addons should be developed using the Addon SDK v2, and old addons should be ported (see [Porting to Addon SDK v2](https://www.construct.net/en/make-games/manuals/addon-sdk/guide/porting-addon-sdk-v2) for a guide on updating SDK v1 addons). For more details see [this forum thread](https://www.construct.net/en/forum/construct-3/plugin-sdk-10/addon-sdk-v2-182122).
+The editor formerly supported SDK v1. Support for this was retired in Construct 3 r450+ and the Addon SDK now only supports the newer SDK v2. In case you still have legacy SDK v1 addons that you wish to port to SDK v2, see the guide [Porting to Addon SDK v2](https://www.construct.net/en/make-games/manuals/addon-sdk/guide/porting-addon-sdk-v2).
 
 # Samples
 
@@ -46,6 +46,7 @@ The SDK includes the following samples:
 ## Behaviors
 
 - **sample-behavior**: an example behavior with template code for writing your own movement logic.
+- **basic-bullet**: an example behavior that replicates a simple form of the Bullet behavior, in order to demonstrate the type of code you need to move instances.
 
 ## Effects
 
