@@ -34,7 +34,7 @@ C3.Plugins.MyCompany_DrawingPlugin.Instance = class DrawingInstance extends glob
 		let quad = this.getBoundingQuad();
 		const rcTex = imageInfo.getTexRect();
 		
-		renderer.setTexture(texture);
+		renderer.setTexture(texture, this.activeSampling);
 		
 		if (this.runtime.isPixelRoundingEnabled)
 		{

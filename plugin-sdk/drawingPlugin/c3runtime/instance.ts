@@ -34,7 +34,7 @@ class DrawingInstance extends globalThis.ISDKWorldInstanceBase
 		let quad = this.getBoundingQuad();
 		const rcTex = imageInfo.getTexRect();
 		
-		renderer.setTexture(texture);
+		renderer.setTexture(texture, this.activeSampling);
 		
 		if (this.runtime.isPixelRoundingEnabled)
 		{

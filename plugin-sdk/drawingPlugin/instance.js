@@ -31,7 +31,7 @@ PLUGIN_CLASS.Instance = class MyDrawingInstance extends SDK.IWorldInstanceBase
 		if (texture)
 		{
 			this._inst.ApplyBlendMode(iRenderer);
-			iRenderer.SetTexture(texture);
+			iRenderer.SetTexture(texture, this._inst.GetActiveSampling());
 			iRenderer.SetColor(this._inst.GetColor());
 			iRenderer.Quad3(this._inst.GetQuad(), this.GetTexRect());
 		}

@@ -15,9 +15,7 @@ C3.Plugins.MyCompany_DrawingPlugin.Type = class DrawingType extends globalThis.I
 
 	_loadTextures(renderer)
 	{
-		return renderer.loadTextureForImageInfo(this.getImageInfo(), {
-			sampling: this.runtime.sampling
-		});
+		return renderer.loadTextureForImageInfo(this.getImageInfo());
 	}
 
 	_releaseTextures(renderer)
